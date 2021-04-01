@@ -1,7 +1,9 @@
 Information About the Post
-<ul>
-  <li> <%= @author.name %></li>
-  <li> <%= @author.hometown %></li>
-</ul>
+<%= render partial: "authors/author", locals: {post_author: @author} %> <!-- because we are calling a partial from outside the current folder, we must specify the folder -->
+<!-- we are passing the render method as key-value pairs -->
+<!-- the first key-value pair shows the name of the partial to render -->
+<!-- the second specifies the locals as a HASH-->
+<!-- the Hash's keys (post_author) will be created as local variables within the partial -->
+
 <%= @post.title %>
 <%= @post.content %>
